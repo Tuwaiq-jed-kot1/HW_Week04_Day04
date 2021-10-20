@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ListViewApp</string>
+    <string name="app_name">ListViewAppWithRoom</string>
     <string-array name="array_technology">
         <item>Android</item>
         <item>Java</item>
@@ -13,5 +13,6 @@
         <item>Rails</item>
         <item>.Net</item>
         <item>Perl</item>
+        <item>Swift</item>
     </string-array>
 </resources>
