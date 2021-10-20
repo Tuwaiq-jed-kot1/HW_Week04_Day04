@@ -7,7 +7,7 @@ import android.util.Log
 import android.view.Gravity
 import android.widget.*
 
-class MainActivity : AppCompatActivity() {
+  class MainActivity : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var langList: List<String>
     private lateinit var arrayAdapter: ListAdapter
@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         listView = findViewById(R.id.lvListView)
         langList = resources.getStringArray(R.array.array_technology).toList()
         // langList = listOf("Android", "Java", "Php", "Hadoop")
