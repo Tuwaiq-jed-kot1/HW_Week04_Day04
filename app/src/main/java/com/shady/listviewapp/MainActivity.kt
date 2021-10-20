@@ -6,26 +6,30 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.*
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class MainActivity : AppCompatActivity() {
     private lateinit var listView: ListView
-    private lateinit var langList: List<String>
+//    private lateinit var langList: List<String>
     private lateinit var arrayAdapter: ListAdapter
-
+    private lateinit var fillButton: Button
+    private lateinit var appDB: AppDataBase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        fillButton = findViewById(R.id.btnFill)
         listView = findViewById(R.id.lvListView)
-        langList = resources.getStringArray(R.array.array_technology).toList()
-        // langList = listOf("Android", "Java", "Php", "Hadoop")
-        arrayAdapter = ArrayAdapter<String>(this, simple_list_item_1, android.R.id.text1 ,langList)
-        listView.adapter = arrayAdapter
-        listView.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this, "${langList[position]} ,  $parent  $view $id", Toast.LENGTH_LONG).let{
-                it.setGravity(Gravity.TOP,10,10)
-                it.show()
-            }
-            Log.e("Print List", "${langList[position]} ,  $parent  $view $id")
+
+        val mainVM = ViewModelProvider(this).get(MainVm::class.java)
+        mainVM.fillDB()
+
+        fillButton.setOnClickListener {
+            mainVM.getAllLang().observe(this, Observer {
+            arrayAdapter = ArrayAdapter<LanguageTabel>(this, simple_list_item_1, android.R.id.text1, it)
+
+            listView.adapter = arrayAdapter})
         }
     }
 }
