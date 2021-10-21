@@ -4,11 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ListView
+    <Button
+        android:id="@+id/fillButton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lvListView"
-        />
+        android:layout_height="wrap_content"
+        android:text="Fill Data" />
+
+    <ListView
+        android:id="@+id/bookViewList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
