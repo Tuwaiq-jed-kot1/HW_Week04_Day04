@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ListViewApp</string>
+    <string name="Android_apps">Anderoid Apps</string>
+    <string name="Application">app</string>
     <string-array name="array_technology">
         <item>Android</item>
         <item>Java</item>
