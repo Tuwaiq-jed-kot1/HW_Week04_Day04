@@ -28,7 +28,7 @@ class Apprepo(context: Context) {
             for (i in 1..12) {
                 val technology = Technology(
                     id = i,
-                    techName = langArray.toString()        //langArray.toString()
+                    techName = langArray[i]        //langArray.toString()
                 )
                 appDB.tech.insert(technology)
             }

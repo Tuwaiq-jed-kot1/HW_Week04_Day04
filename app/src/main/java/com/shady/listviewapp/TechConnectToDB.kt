@@ -17,4 +17,5 @@ interface TechConnectToDB{
 
     @Delete
     suspend fun delete(technology: Technology)
+
 }
