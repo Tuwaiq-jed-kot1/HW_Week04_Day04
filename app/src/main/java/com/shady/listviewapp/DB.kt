@@ -8,5 +8,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Programming_Language_table")
 data class DB(
     @PrimaryKey
+
     val name: String
 ) {}

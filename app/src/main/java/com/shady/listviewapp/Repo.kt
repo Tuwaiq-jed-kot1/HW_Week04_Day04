@@ -21,16 +21,16 @@ class Repo(context: Context) {
     suspend fun fillDB()= withContext(Dispatchers.IO){
 
             val dataDB = appDB.languageDao.getAllLangs()
-        val langList:List<String> = cntx.resources.getStringArray(R.array.array_technology).toList()
+        val langList:List<String> = cntx.resources.getStringArray(R.array.array_Language).toList()
 
         if (dataDB.isEmpty()) {
             for(i in 1..langList.size-1){
 
                // val lang =l(i, langList[i])
-                val lang =DB( langList[i])
+                val languageList =DB(langList[i])
 
               //  context.resources.getStringArray(R.array.array_technology).forEach {
-                   appDB.languageDao.insert(lang)
+                   appDB.languageDao.insert(languageList)
                 }
 
             }}
