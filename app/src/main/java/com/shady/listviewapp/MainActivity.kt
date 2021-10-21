@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         arrayAdapter = ArrayAdapter<String>(this, simple_list_item_1, android.R.id.text1 ,langList)
         listView.adapter = arrayAdapter
         listView.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this, "${langList[position]} ,  $parent  $view $id", Toast.LENGTH_LONG).let{
+            Toast.makeText(this, "${langList[position]}", Toast.LENGTH_SHORT).let{
                 it.setGravity(Gravity.TOP,10,10)
                 it.show()
             }
