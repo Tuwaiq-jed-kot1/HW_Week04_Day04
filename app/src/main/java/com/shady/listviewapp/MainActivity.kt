@@ -22,12 +22,9 @@ class MainActivity : AppCompatActivity() {
         btnFill =findViewById(R.id.btnFill)
 
         val mainVM= ViewModelProvider(this).get(MainVM::class.java)
-        MainVM.fillDataBase()
+        MainVM.fillDB()
 
-        brnFill.setOnClickListener(){
+        btnFill.setOnClickListener(){
             MainVM.getAllLang().observe(this, Observer {
                 arrayAdapter= ArrayAdapter<Table>(this, simple_list_item_1, android.R.id.text1,it )
                 listView.adapter = arrayAdapter
-    }
-}
-    }

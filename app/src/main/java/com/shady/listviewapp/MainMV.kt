@@ -17,4 +17,7 @@ class MainVM(context: Application) : AndroidViewModel(context) {
         }
         return lang
     }
+
+fun fillDataBase()= viewModelScope.launch {
+    repo.fillDB()
 }

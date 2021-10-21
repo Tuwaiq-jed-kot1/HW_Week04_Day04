@@ -7,7 +7,7 @@ import com.shady.listviewapp.Table
 class AppRep(context: Context) {
     private val langDB= LangDB.getLangDB(context)!!
 
-    suspend fun getAllUsers(): List<Table> = langDB.userDao.getAllLang()
+    suspend fun getAllUsers(): List<Table> = langDB.InterfaceDao.getAllLang()
 
     suspend fun fillDB(){
         val dataDB= langDB.InterfaceDao.getAllLang()
