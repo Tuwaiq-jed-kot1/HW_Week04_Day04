@@ -16,7 +16,7 @@ class AppRepo(context: Context) {
 
         val langArray:List<String> = locContext.resources.getStringArray(R.array.array_technology).toList()
         if(dataValues.isEmpty()){
-            for (i in 1..12){
+            for (i in 0 until langArray.lastIndex){
                 val technology = Technology(
                     name= langArray[i],
                     id= i
